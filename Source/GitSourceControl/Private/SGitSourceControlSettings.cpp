@@ -5,7 +5,11 @@
 
 #include "SGitSourceControlSettings.h"
 
+#if ENGINE_MAJOR_VERSION <= 5 && ENGINE_MINOR_VERSION <= 2
 #include "Launch/Resources/Version.h"
+#else
+#include "Runtime/Launch/Resources/Version.h"
+#endif
 #include "Fonts/SlateFontInfo.h"
 #include "Misc/App.h"
 #include "Misc/FileHelper.h"
@@ -28,7 +32,6 @@
 #include "SourceControlOperations.h"
 #include "GitSourceControlModule.h"
 #include "GitSourceControlUtils.h"
-#include "Runtime/Launch/Resources/Version.h"
 
 
 #define LOCTEXT_NAMESPACE "SGitSourceControlSettings"
